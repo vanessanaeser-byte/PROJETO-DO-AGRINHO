@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🌱 Futuro Sustentável</h1>
+        <nav>
+            <span class="aba-link ativa" onclick="mudarAba('conteudo', event)">Início</span>
+            <span class="aba-link" onclick="mudarAba('alerta', event)">Conscientização ⚠️</span>
+            <span class="aba-link" onclick="mudarAba('simulador', event)">Plante uma Árvore 🌳</span>
+        </nav>
+    </header>
+
+    <main id="aba-conteudo" class="aba-conteudo ativa">
+        <section class="hero">
+            <h2>O amanhã começa hoje</h2>
+            <p>Pequenas atitudes locais geram grandes impactos globais. Navegue pelas abas para interagir.</p>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Nossa Missão</h2>
+            <p class="texto-missao">
+                Sustentabilidade é garantir o futuro das próximas gerações. Nosso objetivo é conscientizar e espalhar práticas que equilibrem o desenvolvimento humano com a preservação da natureza.
+            </p>
+        </section>
+
+        <section class="secao-fundo">
+            <div class="container">
+                <h2 class="section-title">Os 3 Rs</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Reduzir</h3>
+                        <p>Diminuir o consumo de produtos desnecessários e reduzir drasticamente o desperdício.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Reutilizar</h3>
+                        <p>Dar uma nova utilidade a objetos cotidianos que iriam para o lixo comum.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Reciclar</h3>
+                        <p>Separar o lixo corretamente para que seja reaproveitado como nova matéria-prima.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main id="aba-alerta" class="aba-conteudo">
+        <section class="hero hero-alerta">
+            <h2>Por que cuidar da Terra?</h2>
+            <p>Entenda a importância do equilíbrio ecológico e as consequências reais da falta de atenção.</p>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">A Importância do Meio Ambiente</h2>
+            <p class="texto-missao-alerta">
+                A natureza regula o ar que respiramos, purifica a água que bebemos e estabiliza o clima. Proteger o meio ambiente não é proteger uma paisagem, é defender nossa permanência na Terra.
+            </p>
+
+            <h2 class="section-title titulo-risco">Os Riscos da Inação</h2>
+            <div class="grid">
+                <div class="card card-alerta">
+                    <h3>Mudanças Climáticas</h3>
+                    <p>O desmatamento desenfreado acelera o aquecimento global, intensificando tempestades destrutivas, secas severas e ondas de calor extremo.</p>
+                </div>
+                <div class="card card-alerta">
+                    <h3>Escassez de Recursos</h3>
+                    <p>A poluição sistemática de mananciais de água reduz o acesso à água potável e inutiliza terras agricultáveis preciosas.</p>
+                </div>
+                <div class="card card-alerta">
+                    <h3>Perda da Biodiversidade</h3>
+                    <p>A perda acelerada de habitats naturais extingue milhares de espécies, quebrando elos essenciais e gerando desequilíbrio biológico.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main id="aba-simulador" class="aba-conteudo">
+        <div class="simulador-container">
+            <div class="painel">
+                <h2>Bosque Virtual</h2>
+                <p>Veja a transformação da vida a partir de um clique!</p>
+                
+                <div class="contador-box" id="contador">0</div>
+                <p class="texto-contador-rotulo">Árvores Plantadas</p>
+
+                <div class="campo-plantio">
+                    <div id="arvore" class="arvore-virtual"></div>
+                </div>
+                
+                <div id="status" class="status-texto">Pronto para o plantio...</div>
+                <button class="btn-plantar" id="btnPlantar">Plantar Árvore</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Futuro Sustentável. Criado para espalhar consciência ecológica.</p>
+    </footer>
+
+<script src="java.js"></script>
+</body>
+</html>

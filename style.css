@@ -1,0 +1,231 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f5;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   MENU E ABAS
+   ========================================================================== */
+header {
+    background-color: #2e6f40;
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .aba-link {
+    color: #a3e2a4;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+nav .aba-link.ativa {
+    background-color: #1e4d2b;
+    color: white;
+}
+
+nav .aba-link:hover {
+    color: white;
+}
+
+.aba-conteudo {
+    display: none;
+    flex: 1;
+}
+
+.aba-conteudo.ativa {
+    display: block;
+}
+
+/* ==========================================================================
+   CONTEÚDO DO SITE
+   ========================================================================== */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+}
+
+.hero-alerta {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80');
+}
+
+.hero h2 { font-size: 2.3rem; margin-bottom: 0.5rem; }
+.hero p { font-size: 1.1rem; max-width: 600px; }
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2e6f40;
+    font-size: 2rem;
+}
+
+.titulo-risco { color: #c0392b; }
+
+.texto-missao, .texto-missao-alerta {
+    text-align: center; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    font-size: 1.1rem;
+}
+
+.texto-missao-alerta { margin-bottom: 3rem; }
+.secao-fundo { background-color: #eef2ed; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 5px solid #2e6f40;
+}
+
+.card-alerta { border-top-color: #c0392b; }
+.card-alerta h3 { color: #c0392b; margin-bottom: 0.5rem; }
+
+/* ==========================================================================
+   SIMULADOR (ESTILOS E MOTOR VISUAL)
+   ========================================================================== */
+.simulador-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: #eef5f0;
+    min-height: 65vh;
+}
+
+.painel {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(46, 111, 64, 0.1);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+}
+
+.contador-box {
+    background-color: #e2f0e6;
+    color: #2e6f40;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 5px 20px;
+    border-radius: 15px;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.texto-contador-rotulo { font-weight: bold; color: #2e6f40; }
+
+.campo-plantio {
+    height: 160px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 20px 0;
+    border-bottom: 8px solid #8b5a2b;
+    border-radius: 4px;
+    background: linear-gradient(to bottom, #e0f2fe, #f0fdf4);
+}
+
+/* Base da árvore (Oculta antes do clique) */
+.arvore-virtual {
+    font-size: 2rem;
+    transition: all 0.5s ease-in-out;
+    transform: scale(0);
+    opacity: 0;
+    margin-bottom: -5px;
+}
+
+/* Modificações acionadas por JS */
+.estagio-semente { transform: scale(1); opacity: 1; font-size: 1.5rem; }
+.estagio-broto   { transform: scale(1.2); opacity: 1; font-size: 2.5rem; }
+.estagio-arvore  { transform: scale(1); opacity: 1; font-size: 5rem; }
+
+.status-texto {
+    font-style: italic;
+    color: #7f8c8d;
+    height: 24px;
+    margin-bottom: 20px;
+}
+
+.btn-plantar {
+    background-color: #2e6f40;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(46, 111, 64, 0.3);
+    transition: background 0.2s;
+    width: 100%;
+}
+
+.btn-plantar:hover { background-color: #245832; }
+.btn-plantar:disabled { opacity: 0.5; cursor: not-allowed; }
+
+footer {
+    background-color: #1e2d24;
+    color: #a3b899;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 1rem; }
+    nav .aba-link { margin: 0.2rem 0; display: inline-block; }
+}
